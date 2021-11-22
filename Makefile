@@ -4,11 +4,15 @@
 help:
 	@grep -E '^[\.a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
+.PHONY: python
+python:
+	pyenv install --skip-existing
+
 .venv:
 	python3 -m venv .venv
 
 .PHONY: install
-install: .venv ## Install all dependencies
+install: python .venv ## Install all dependencies
 	.venv/bin/python -m pip install --upgrade pip setuptools
 	.venv/bin/python -m pip install --requirement requirements.txt --upgrade
 	npm install
