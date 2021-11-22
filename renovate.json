@@ -1,0 +1,5 @@
+{
+    "assignees": ["keimlink"],
+    "extends": ["config:base"],
+    "labels": ["renovate"]
+}

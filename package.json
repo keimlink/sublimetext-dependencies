@@ -1,0 +1,22 @@
+{
+    "name": "sublimetext-dependencies",
+    "version": "1.0.0",
+    "description": "Dependencies for Sublime Text Linters and Formatters",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/keimlink/sublimetext-dependencies.git"
+    },
+    "author": "Markus Zapke-Gründemann",
+    "license": "BSD-3-Clause",
+    "bugs": {
+        "url": "https://github.com/keimlink/sublimetext-dependencies/issues"
+    },
+    "homepage": "https://github.com/keimlink/sublimetext-dependencies#readme",
+    "dependencies": {
+        "xo": "0.23.0"
+    },
+    "private": true
+}
