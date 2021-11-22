@@ -16,7 +16,7 @@
     },
     "homepage": "https://github.com/keimlink/sublimetext-dependencies#readme",
     "dependencies": {
-        "xo": "0.23.0"
+        "xo": "0.46.4"
     },
     "private": true,
     "volta": {
