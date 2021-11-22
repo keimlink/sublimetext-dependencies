@@ -1,5 +1,12 @@
 {
     "assignees": ["keimlink"],
     "extends": ["config:base"],
-    "labels": ["renovate"]
+    "labels": ["renovate"],
+    "packageRules": [
+        {
+            "ignoreUnstable": false,
+            "matchManagers": ["pip_requirements"],
+            "matchPackagePatterns": ["^black"]
+        }
+    ]
 }
