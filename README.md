@@ -42,4 +42,4 @@ generate the necessary configurations.
 
 Distributed under the 3-clause BSD license.
 
-Copyright 2020 Markus Zapke-Gründemann
+Copyright 2021 Markus Zapke-Gründemann
