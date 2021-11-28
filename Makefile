@@ -1,4 +1,4 @@
-.DEFAULT_GOAL := help
+.DEFAULT_GOAL := install
 
 .PHONY: help
 help:
@@ -6,7 +6,12 @@ help:
 
 .PHONY: python
 python:
-	pyenv install --skip-existing
+	@if command -v pyenv >/dev/null 2>&1; then \
+		pyenv install --skip-existing; \
+		echo "Using Python $$(pyenv version)"; \
+	else \
+		echo "Using $$(python --version) ($$(which python))"; \
+	fi
 
 .venv:
 	python3 -m venv .venv
@@ -16,14 +21,6 @@ install: python .venv ## Install all dependencies
 	.venv/bin/python -m pip install --upgrade pip setuptools
 	.venv/bin/python -m pip install --requirement requirements.txt --upgrade
 	npm install
-
-.PHONY: configuration-sublack
-configuration-sublack: ## Generate sublack configuration
-	@./configure.py sublack
-
-.PHONY: configuration-sublimelinter
-configuration-sublimelinter: ## Generate SublimeLinter configuration
-	@./configure.py sublimelinter
 
 .PHONY: clean
 clean: ## Remove all dependencies
