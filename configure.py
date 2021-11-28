@@ -13,6 +13,7 @@ def configure_flake8(python):
         "B9",  # flake8-bugbear opinionated warnings
         "C",  # flake8-comprehensions, mccabe
         "D",  # flake8-docstrings
+        "DJ",  # flake8-django
         "E",  # flake8, flake8-eradicate, pycodestyle
         "F",  # flake8
         "G",  # flake8-logging-format
