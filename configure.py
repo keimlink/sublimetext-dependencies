@@ -18,6 +18,17 @@ def configure_flake8(python):
         "E501",  # line too long (82 > 79 characters)
         "W503",  # line break before binary operator
     ]
+    per_file_ignores = {
+        "test_*.py": [
+            "D101",  # Missing docstring in public class
+            "D102",  # Missing docstring in public method
+            "D103",  # Missing docstring in public function
+            "S101",  # Use of assert detected.
+        ],
+        "tests/*__init__.py": [
+            "D104",  # Missing docstring in public package
+        ],
+    }
     select = [
         "A",  # flake8-builtins
         "B",  # flake8-bugbear
@@ -43,7 +54,9 @@ def configure_flake8(python):
             "--max-line-length",
             "99",
             "--per-file-ignores",
-            "test_*.py:S101",  # Ignore assert statements in tests
+            " ".join(
+                [f"{filename}:{','.join(errors)}" for filename, errors in per_file_ignores.items()]
+            ),
             "--select",
             ",".join(select),
             "--stdin-display-name",
