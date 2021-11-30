@@ -42,6 +42,8 @@ def configure_flake8(python):
             "10",
             "--max-line-length",
             "99",
+            "--per-file-ignores",
+            "test_*.py:S101",  # Ignore assert statements in tests
             "--select",
             ",".join(select),
         ],
