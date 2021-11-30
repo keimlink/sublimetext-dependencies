@@ -7,6 +7,17 @@ import pathlib
 
 def configure_flake8(python):
     """Confgure the Flake8 linter."""
+    extend_ignore = [
+        "A003",  # "attribute" is a python builtin, consider renaming the class attribute
+        "D100",  # Missing docstring in public module
+        "D105",  # Missing docstring in magic method
+        "D106",  # Missing docstring in public nested class
+        # Options related to Black
+        # https://black.readthedocs.io/en/stable/compatible_configs.html#flake8
+        "E203",  # whitespace before ':'
+        "E501",  # line too long (82 > 79 characters)
+        "W503",  # line break before binary operator
+    ]
     select = [
         "A",  # flake8-builtins
         "B",  # flake8-bugbear
@@ -22,17 +33,6 @@ def configure_flake8(python):
         "S",  # flake8-bandit
         "T",  # flake8-debugger
         "W",  # pycodestyle
-    ]
-    extend_ignore = [
-        "A003",  # "attribute" is a python builtin, consider renaming the class attribute
-        "D100",  # Missing docstring in public module
-        "D105",  # Missing docstring in magic method
-        "D106",  # Missing docstring in public nested class
-        # Options related to Black
-        # https://black.readthedocs.io/en/stable/compatible_configs.html#flake8
-        "E203",  # whitespace before ':'
-        "E501",  # line too long (82 > 79 characters)
-        "W503",  # line break before binary operator
     ]
     return {
         "args": [
