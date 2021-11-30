@@ -46,6 +46,8 @@ def configure_flake8(python):
             "test_*.py:S101",  # Ignore assert statements in tests
             "--select",
             ",".join(select),
+            "--stdin-display-name",
+            "${file:stdin}",  # Make source filename available to flake8, use stdin as fallback
         ],
         "python": python,
     }
