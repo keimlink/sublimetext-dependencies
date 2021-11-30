@@ -36,14 +36,14 @@ def configure_flake8(python):
     ]
     return {
         "args": [
+            "--extend-ignore",
+            ",".join(extend_ignore),
             "--max-complexity",
             "10",
             "--max-line-length",
             "99",
             "--select",
             ",".join(select),
-            "--extend-ignore",
-            ",".join(extend_ignore),
         ],
         "python": python,
     }
