@@ -29,6 +29,7 @@ def configure_flake8(python):
         "G",  # flake8-logging-format
         "I",  # flake8-isort, flake8-tidy-imports
         "N",  # pep8-naming
+        "P",  # flake8-pytest-style
         "S",  # flake8-bandit
         "T",  # flake8-debugger
     ]
@@ -57,6 +58,10 @@ def configure_flake8(python):
             " ".join(
                 [f"{filename}:{','.join(errors)}" for filename, errors in per_file_ignores.items()]
             ),
+            "--pytest-fixture-no-parentheses",
+            "--pytest-mark-no-parentheses",
+            "--pytest-parametrize-names-type",
+            "csv",
             "--stdin-display-name",
             "${file:stdin}",  # Make source filename available to flake8, use stdin as fallback
         ],

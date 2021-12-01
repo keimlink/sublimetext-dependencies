@@ -34,6 +34,7 @@ Run `make` to install or update all dependencies listed below:
     - [flake8-eradicate](https://github.com/sobolevn/flake8-eradicate)
     - [flake8-isort](https://github.com/gforcada/flake8-isort)
     - [flake8-logging-format](https://github.com/globality-corp/flake8-logging-format)
+    - [flake8-pytest-style](https://github.com/m-burst/flake8-pytest-style)
     - [flake8-tidy-imports](https://github.com/adamchainz/flake8-tidy-imports)
     - [pep8-naming](https://github.com/PyCQA/pep8-naming)
 - [xo](https://github.com/xojs/xo)
