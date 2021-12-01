@@ -108,13 +108,18 @@ class JSONPathlibEncoder(json.JSONEncoder):
         return super.default(obj)
 
 
+def serialize(configuration):
+    """Serialize configuration as JSON string representation."""
+    return JSONPathlibEncoder(indent=4).encode(configuration)
+
+
 def configure(packages):
     """Confgure a Sublime Text package and print the configuration as JSON."""
     parser = argparse.ArgumentParser(description=configure.__doc__)
     parser.add_argument("package", choices=packages, help="Name of package to be configured")
     args = parser.parse_args()
     configuration = packages[args.package](pathlib.Path.cwd())
-    print(JSONPathlibEncoder(indent=4).encode(configuration))
+    print(serialize(configuration))
 
 
 if __name__ == "__main__":
