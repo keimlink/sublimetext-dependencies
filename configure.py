@@ -19,6 +19,19 @@ def configure_flake8(python):
         "E501",  # line too long (82 > 79 characters) - must be disabled for B950 to be hit
         "W503",  # line break before binary operator - warning is not PEP 8 compliant
     ]
+    extend_select = [
+        "A",  # flake8-builtins
+        "B",  # flake8-bugbear
+        "B9",  # flake8-bugbear opinionated warnings
+        "C",  # flake8-comprehensions, mccabe
+        "D",  # flake8-docstrings
+        "DJ",  # flake8-django
+        "G",  # flake8-logging-format
+        "I",  # flake8-isort, flake8-tidy-imports
+        "N",  # pep8-naming
+        "S",  # flake8-bandit
+        "T",  # flake8-debugger
+    ]
     per_file_ignores = {
         "test_*.py": [
             "D101",  # Missing docstring in public class
@@ -30,26 +43,12 @@ def configure_flake8(python):
             "D104",  # Missing docstring in public package
         ],
     }
-    select = [
-        "A",  # flake8-builtins
-        "B",  # flake8-bugbear
-        "B9",  # flake8-bugbear opinionated warnings
-        "C",  # flake8-comprehensions, mccabe
-        "D",  # flake8-docstrings
-        "DJ",  # flake8-django
-        "E",  # flake8, flake8-eradicate, pycodestyle
-        "F",  # flake8
-        "G",  # flake8-logging-format
-        "I",  # flake8-isort, flake8-tidy-imports
-        "N",  # pep8-naming
-        "S",  # flake8-bandit
-        "T",  # flake8-debugger
-        "W",  # pycodestyle
-    ]
     return {
         "args": [
             "--extend-ignore",
             ",".join(extend_ignore),
+            "--extend-select",
+            ",".join(extend_select),
             "--max-complexity",
             "10",
             "--max-line-length",
@@ -58,8 +57,6 @@ def configure_flake8(python):
             " ".join(
                 [f"{filename}:{','.join(errors)}" for filename, errors in per_file_ignores.items()]
             ),
-            "--select",
-            ",".join(select),
             "--stdin-display-name",
             "${file:stdin}",  # Make source filename available to flake8, use stdin as fallback
         ],
