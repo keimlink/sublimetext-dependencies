@@ -29,7 +29,7 @@ Run `make` to install or update all dependencies listed below:
     - [flake8-builtins](https://github.com/gforcada/flake8-builtins)
     - [flake8-comprehensions](https://github.com/adamchainz/flake8-comprehensions)
     - [flake8-debugger](https://github.com/JBKahn/flake8-debugger)
-    - [flake8-django](https://github.com/rocioar/flake8-django)
+    - [flake8-django](https://github.com/rocioar/flake8-django) (deactivated until a release compatible with flake8 4.x is has been released)
     - [flake8-docstrings](https://gitlab.com/pycqa/flake8-docstrings)
     - [flake8-eradicate](https://github.com/sobolevn/flake8-eradicate)
     - [flake8-isort](https://github.com/gforcada/flake8-isort)

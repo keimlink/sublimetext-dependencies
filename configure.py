@@ -25,7 +25,7 @@ def configure_flake8(python):
         "B9",  # flake8-bugbear opinionated warnings
         "C",  # flake8-comprehensions, mccabe
         "D",  # flake8-docstrings
-        "DJ",  # flake8-django
+        # "DJ",  # flake8-django
         "G",  # flake8-logging-format
         "I",  # flake8-isort, flake8-tidy-imports
         "N",  # pep8-naming
