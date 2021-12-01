@@ -12,11 +12,12 @@ def configure_flake8(python):
         "D100",  # Missing docstring in public module
         "D105",  # Missing docstring in magic method
         "D106",  # Missing docstring in public nested class
-        # Options related to Black
-        # https://black.readthedocs.io/en/stable/compatible_configs.html#flake8
-        "E203",  # whitespace before ':'
-        "E501",  # line too long (82 > 79 characters)
-        "W503",  # line break before binary operator
+        # Options related to Black and flake8-bugbear
+        # https://black.readthedocs.io/en/stable/guides/using_black_with_other_tools.html#flake8
+        # https://github.com/PyCQA/flake8-bugbear#how-to-enable-opinionated-warnings
+        "E203",  # whitespace before ':' - warning is not PEP 8 compliant
+        "E501",  # line too long (82 > 79 characters) - must be disabled for B950 to be hit
+        "W503",  # line break before binary operator - warning is not PEP 8 compliant
     ]
     per_file_ignores = {
         "test_*.py": [
