@@ -23,14 +23,14 @@ If installed [pyenv](https://github.com/pyenv/pyenv) will be used to install the
 Run `make` to install or update all dependencies listed below:
 
 - [black](https://github.com/ambv/black)
-- [flake8](https://gitlab.com/pycqa/flake8)
+- [flake8](https://github.com/pycqa/flake8)
     - [flake8-bandit](https://github.com/tylerwince/flake8-bandit)
     - [flake8-bugbear](https://github.com/PyCQA/flake8-bugbear)
     - [flake8-builtins](https://github.com/gforcada/flake8-builtins)
     - [flake8-comprehensions](https://github.com/adamchainz/flake8-comprehensions)
     - [flake8-debugger](https://github.com/JBKahn/flake8-debugger)
     - [flake8-django](https://github.com/rocioar/flake8-django) (deactivated until a release compatible with flake8 4.x is has been released)
-    - [flake8-docstrings](https://gitlab.com/pycqa/flake8-docstrings)
+    - [flake8-docstrings](https://github.com/PyCQA/flake8-docstrings)
     - [flake8-eradicate](https://github.com/sobolevn/flake8-eradicate)
     - [flake8-isort](https://github.com/gforcada/flake8-isort)
     - [flake8-logging-format](https://github.com/globality-corp/flake8-logging-format)
