@@ -28,7 +28,7 @@ def configure_flake8(python):
         "G",  # flake8-logging-format
         "I",  # flake8-isort, flake8-tidy-imports
         "N",  # pep8-naming
-        "P",  # flake8-pytest-style
+        "PT",  # flake8-pytest-style
         "S",  # flake8-bandit
         "T",  # flake8-debugger
     ]
