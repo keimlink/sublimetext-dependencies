@@ -7,8 +7,8 @@ help:
 .PHONY: python
 python:
 	@if command -v pyenv >/dev/null 2>&1; then \
-		pyenv install --skip-existing; \
-		echo "Using Python $$(pyenv version)"; \
+		pyenv install --skip-existing \
+		&& echo "Using Python $$(pyenv version)"; \
 	else \
 		echo "Using $$(python --version) ($$(which python))"; \
 	fi
