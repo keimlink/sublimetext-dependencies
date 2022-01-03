@@ -12,6 +12,9 @@ python:
 	else \
 		echo "Using $$(python --version) ($$(which python))"; \
 	fi
+	@if [[ $$(python --version) != $$(.venv/bin/python --version) ]]; then \
+		rm -fr .venv; \
+	fi
 
 .venv:
 	python3 -m venv .venv
