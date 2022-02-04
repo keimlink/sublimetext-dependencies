@@ -7,6 +7,18 @@ import pathlib
 
 def configure_flake8(python):
     """Confgure the Flake8 linter."""
+    ignore = [
+        # defaults, must be explicitly defined to remove flake8-bugbear warnings from the list
+        "E121",
+        "E123",
+        "E126",
+        "E226",
+        "E24",
+        "E704",
+        "N818",
+        "W503",
+        "W504",
+    ]
     extend_ignore = [
         "A003",  # "attribute" is a python builtin, consider renaming the class attribute
         "D100",  # Missing docstring in public module
@@ -17,20 +29,28 @@ def configure_flake8(python):
         # https://github.com/PyCQA/flake8-bugbear#how-to-enable-opinionated-warnings
         "E203",  # whitespace before ':' - warning is not PEP 8 compliant
         "E501",  # line too long (82 > 79 characters) - must be disabled for B950 to be hit
-        "W503",  # line break before binary operator - warning is not PEP 8 compliant
+        "E722",  # do not use bare 'except' - must be disabled for B001 to be hit
     ]
-    extend_select = [
-        "A",  # flake8-builtins
+    select = [
+        # defaults
+        "E",
+        "F",
+        "W",
+        "C90",
+    ] + [
+        "A0",  # flake8-builtins
         "B",  # flake8-bugbear
         "B9",  # flake8-bugbear opinionated warnings
-        "C",  # flake8-comprehensions, mccabe
+        "C4",  # flake8-comprehensions
+        "D",  # flake8-docstrings
         # "DJ",  # flake8-django
         "G",  # flake8-logging-format
-        "I",  # flake8-isort, flake8-tidy-imports
-        "N",  # pep8-naming
-        "PT",  # flake8-pytest-style
+        "I0",  # flake8-isort
+        "I25",  # flake8-tidy-imports
+        "N8",  # pep8-naming
+        "PT0",  # flake8-pytest-style
         "S",  # flake8-bandit
-        "T",  # flake8-debugger
+        "T100",  # flake8-debugger
     ]
     per_file_ignores = {
         "test_*.py": [
@@ -45,10 +65,12 @@ def configure_flake8(python):
     }
     return {
         "args": [
+            "--ignore",
+            ",".join(ignore),
             "--extend-ignore",
             ",".join(extend_ignore),
-            "--extend-select",
-            ",".join(extend_select),
+            "--select",
+            ",".join(select),
             "--max-complexity",
             "10",
             "--max-line-length",
