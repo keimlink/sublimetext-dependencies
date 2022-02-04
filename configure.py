@@ -72,7 +72,7 @@ def configure_flake8(python):
             "--select",
             ",".join(select),
             "--max-complexity",
-            "10",
+            "7",
             "--max-line-length",
             "99",
             "--per-file-ignores",
