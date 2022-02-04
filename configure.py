@@ -45,8 +45,6 @@ def configure_flake8(python):
     }
     return {
         "args": [
-            "--docstring-convention",
-            "google",
             "--extend-ignore",
             ",".join(extend_ignore),
             "--extend-select",
