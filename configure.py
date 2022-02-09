@@ -15,7 +15,6 @@ def configure_flake8(python):
         "E226",
         "E24",
         "E704",
-        "N818",
         "W503",
         "W504",
     ]
